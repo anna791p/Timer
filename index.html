@@ -36,6 +36,7 @@
     let start = document.getElementById('startButton')
 
     let timeLeft = 0
+    let resetTime = 0
 
 
     buttonFive.addEventListener('click', fiveSec)
@@ -43,14 +44,15 @@
     buttonFifteen.addEventListener ('click', fifteenSec)
     buttonTwenty.addEventListener ('click', twentySec)
     buttonThirty.addEventListener ('click', thirtySec)
-    /*input.addEventListener ('click', input)
-    reset.addEventListener ('click', reset) */
+    //input.addEventListener ('click', input)
     start.addEventListener ('click', startFun)
     pause.addEventListener ('click', pauseFun)
+    reset.addEventListener ('click', resetFun)
 
     function fiveSec() {
         console.log('select at 5')
         timeLeft = 5
+        resetTime = 5
         document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
@@ -58,6 +60,7 @@
     function tenSec() {
         console.log('select at 10')
         timeLeft = 10
+        resetTime = 10
         document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
@@ -65,6 +68,7 @@
     function fifteenSec() {
         console.log('select at 15')
         timeLeft = 15
+        resetTime = 15
         document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
@@ -72,6 +76,7 @@
     function twentySec() {
         console.log('select at 20')
         timeLeft = 20
+        resetTime = 20
         document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
@@ -79,6 +84,7 @@
     function thirtySec() {
         console.log('select at 30')
         timeLeft = 30
+        resetTime = 30
         document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
@@ -87,12 +93,12 @@
 
     function pauseFun() {
       console.log('paused')
-      paused ++
+      paused ++ //stops the if statement inside start
     }
 
     let started = 0
     function startFun() {
-      paused = 0
+      paused = 0 //re-enables the timer if paused
         if (started == 0) { //blocks speeding
             started ++
             console.log('selected start')
@@ -102,13 +108,17 @@
                 document.getElementById("remainingTime").innerHTML = timeLeft
               }
             }, 1000);
-
         }
-
 
         return {
           'returnTime': timeLeft
         }
+    }
+
+    function resetFun () {
+      paused ++ //stops the if statement inside start
+      timeLeft = resetTime
+      document.getElementById("remainingTime").innerHTML = timeLeft
     }
 
 
