@@ -18,7 +18,7 @@
         <div id="button15"><h2>15</h2></div>
         <div id="button20"><h2>20</h2></div>
         <div id="button30"><h2>30</h2></div>
-        <div id="input"><input type="text" placeholder="Start from" name="firstname"></div>
+        <div id="inputField"><input type="text" placeholder="Start from" name="firstname"></div>
         <div id="pause"><h2>Pause</h2></div>
         <div id="reset"><h2>Reset</h2></div>
         <div id="startButton"><h2>Start</h2></div>
@@ -30,7 +30,6 @@
     let buttonFifteen = document.getElementById('button15')
     let buttonTwenty = document.getElementById('button20')
     let buttonThirty = document.getElementById('button30')
-    let input = document.getElementById('input')
     let pause = document.getElementById('pause')
     let reset = document.getElementById('reset')
     let start = document.getElementById('startButton')
@@ -44,7 +43,6 @@
     buttonFifteen.addEventListener ('click', fifteenSec)
     buttonTwenty.addEventListener ('click', twentySec)
     buttonThirty.addEventListener ('click', thirtySec)
-    //input.addEventListener ('click', input)
     start.addEventListener ('click', startFun)
     pause.addEventListener ('click', pauseFun)
     reset.addEventListener ('click', resetFun)
@@ -98,6 +96,13 @@
 
     let started = 0
     function startFun() {
+        let userInput = document.getElementById("inputField").value
+        if (userInput > 0) {
+            timeLeft = userInput
+            console.log('timeLeft')
+        }
+
+        
       paused = 0 //re-enables the timer if paused
         if (started == 0) { //blocks speeding
             started ++
@@ -121,6 +126,8 @@
       document.getElementById("remainingTime").innerHTML = timeLeft
     }
 
+        
+    
 
 
 
