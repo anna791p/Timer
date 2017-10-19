@@ -83,13 +83,16 @@
         console.log()
     }
 
+    let started = 0
     function startFun() {
-        console.log('selected start')
-        setInterval(function() {
-          timeLeft --
-          document.getElementById("remainingTime").innerHTML = timeLeft;
-        }, 1000);
-
+        if (started == 0) { //blocks speeding
+            started ++
+            console.log('selected start')
+            setInterval(function() {
+              timeLeft --
+              document.getElementById("remainingTime").innerHTML = timeLeft;
+            }, 1000);
+        }
 
 
         return {
