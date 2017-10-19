@@ -18,7 +18,7 @@
         <div id="button15"><h2>15</h2></div>
         <div id="button20"><h2>20</h2></div>
         <div id="button30"><h2>30</h2></div>
-        <div id="inputField"><input type="text" placeholder="Start from" name="firstname"></div>
+        <div><input id="inputField" type="text" placeholder="Start from" name="firstname"></div>
         <div id="pause"><h2>Pause</h2></div>
         <div id="reset"><h2>Reset</h2></div>
         <div id="startButton"><h2>Start</h2></div>
@@ -97,12 +97,14 @@
     let started = 0
     function startFun() {
         let userInput = document.getElementById("inputField").value
+        console.log(userInput)
         if (userInput > 0) {
             timeLeft = userInput
+            resetTime = userInput
             console.log('timeLeft')
         }
 
-        
+
       paused = 0 //re-enables the timer if paused
         if (started == 0) { //blocks speeding
             started ++
@@ -126,8 +128,8 @@
       document.getElementById("remainingTime").innerHTML = timeLeft
     }
 
-        
-    
+
+
 
 
 
