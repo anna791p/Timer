@@ -9,7 +9,7 @@
 
 <body>
     <div class="countdown">
-    <h1>00:00</h1>
+    <h1 id="remainingTime">00:00</h1>
     </div>
 
     <section class="buttons">
@@ -51,30 +51,35 @@
     function fiveSec() {
         console.log('select at 5')
         timeLeft = 5
+        document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
 
     function tenSec() {
         console.log('select at 10')
         timeLeft = 10
+        document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
 
     function fifteenSec() {
         console.log('select at 15')
         timeLeft = 15
+        document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
 
     function twentySec() {
         console.log('select at 20')
         timeLeft = 20
+        document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
 
     function thirtySec() {
         console.log('select at 30')
         timeLeft = 30
+        document.getElementById("remainingTime").innerHTML = timeLeft;
         console.log()
     }
 
@@ -82,9 +87,17 @@
         console.log('selected start')
         setInterval(function() {
           timeLeft --
+          document.getElementById("remainingTime").innerHTML = timeLeft;
         }, 1000);
 
-        
+
+
+        return {
+          'returnTime': timeLeft
+        }
+
+
+
         /*
         console.log()
         let seconds = Math.floor((distance % (1000 * 60)) / 1000); */
