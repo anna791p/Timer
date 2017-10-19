@@ -44,9 +44,9 @@
     buttonTwenty.addEventListener ('click', twentySec)
     buttonThirty.addEventListener ('click', thirtySec)
     /*input.addEventListener ('click', input)
-    pause.addEventListener ('click', pause)
     reset.addEventListener ('click', reset) */
     start.addEventListener ('click', startFun)
+    pause.addEventListener ('click', pauseFun)
 
     function fiveSec() {
         console.log('select at 5')
@@ -83,29 +83,35 @@
         console.log()
     }
 
+    let paused = 0
+
+    function pauseFun() {
+      console.log('paused')
+      paused ++
+    }
+
     let started = 0
     function startFun() {
+      paused = 0
         if (started == 0) { //blocks speeding
             started ++
             console.log('selected start')
             setInterval(function() {
-              timeLeft --
-              document.getElementById("remainingTime").innerHTML = timeLeft;
+              if (paused == 0) {
+                timeLeft --
+                document.getElementById("remainingTime").innerHTML = timeLeft
+              }
             }, 1000);
+
         }
 
 
         return {
           'returnTime': timeLeft
         }
-
-
-
-        /*
-        console.log()
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000); */
-
     }
+
+
 
 
 
