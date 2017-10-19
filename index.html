@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="">
+
+    <style>
+    #redTime {
+      color: red;
+      display: none;
+    }
+    </style>
 </head>
 
 <body>
     <div class="countdown">
     <h1 id="remainingTime">00:00</h1>
+    <h1 id="redTime">00:00</h1>
     </div>
 
     <section class="buttons">
@@ -85,6 +93,8 @@
     function changeTimeRemaining() {
       document.getElementById("remainingTime").innerHTML = timeLeft
       document.getElementById("inputField").value = ""
+      document.getElementById("redTime").style.display = "none"
+      document.getElementById("remainingTime").style.display = "inline"
     }
 
     let paused = 0
@@ -101,6 +111,8 @@
         if (userInput > 0) {
             timeLeft = userInput
             resetTime = userInput
+            document.getElementById("redTime").style.display = "none"
+            document.getElementById("remainingTime").style.display = "inline"
             console.log('timeLeft')
         }
 
@@ -115,24 +127,24 @@
                 document.getElementById("remainingTime").innerHTML = timeLeft
               }
               if (timeLeft == 0) {
-               alarmTime()       
+               alarmTime()
               }
             }, 1000);
         }
-        
-    
-            
-            
+
+
+
+
         return {
           'returnTime': timeLeft
         }
     }
-        
+
     function alarmTime() {
         console.log('time is out')
-            document.getElementById("remainingTime").innerHTML = "00:00"
-            document.getElementById("remainingTime").classList = ".outOfTime"
-            clearInterval()
+            document.getElementById("redTime").style.display = "inline"
+            document.getElementById("remainingTime").style.display = "none"
+            paused = 1
     }
 
     function resetFun () {
