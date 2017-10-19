@@ -51,40 +51,40 @@
         console.log('select at 5')
         timeLeft = 5
         resetTime = 5
-        document.getElementById("remainingTime").innerHTML = timeLeft;
-        console.log()
+        changeTimeRemaining()
     }
 
     function tenSec() {
         console.log('select at 10')
         timeLeft = 10
         resetTime = 10
-        document.getElementById("remainingTime").innerHTML = timeLeft;
-        console.log()
+        changeTimeRemaining()
     }
 
     function fifteenSec() {
         console.log('select at 15')
         timeLeft = 15
         resetTime = 15
-        document.getElementById("remainingTime").innerHTML = timeLeft;
-        console.log()
+        changeTimeRemaining()
     }
 
     function twentySec() {
         console.log('select at 20')
         timeLeft = 20
         resetTime = 20
-        document.getElementById("remainingTime").innerHTML = timeLeft;
-        console.log()
+        changeTimeRemaining()
     }
 
     function thirtySec() {
         console.log('select at 30')
         timeLeft = 30
         resetTime = 30
-        document.getElementById("remainingTime").innerHTML = timeLeft;
-        console.log()
+        changeTimeRemaining()
+    }
+
+    function changeTimeRemaining() {
+      document.getElementById("remainingTime").innerHTML = timeLeft
+      document.getElementById("inputField").value = ""
     }
 
     let paused = 0
