@@ -114,12 +114,25 @@
                 timeLeft --
                 document.getElementById("remainingTime").innerHTML = timeLeft
               }
+              if (timeLeft == 0) {
+               alarmTime()       
+              }
             }, 1000);
         }
-
+        
+    
+            
+            
         return {
           'returnTime': timeLeft
         }
+    }
+        
+    function alarmTime() {
+        console.log('time is out')
+            document.getElementById("remainingTime").innerHTML = "00:00"
+            document.getElementById("remainingTime").classList = ".outOfTime"
+            clearInterval()
     }
 
     function resetFun () {
