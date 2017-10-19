@@ -165,6 +165,8 @@
         console.log('time is out')
             document.getElementById("redTime").style.display = "inline"
             document.getElementById("remainingTime").style.display = "none"
+            let alarm = new Audio('alarm.mp3')
+            alarm.play() //starts music
             paused = 1
     }
 
