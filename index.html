@@ -11,7 +11,7 @@
     <div class="countdown">
     <h1>00:00</h1>
     </div>
-    
+
     <section class="buttons">
         <div id="button5"><h2>5</h2></div>
         <div id="button10"><h2>10</h2></div>
@@ -23,7 +23,7 @@
         <div id="reset"><h2>Reset</h2></div>
         <div id="startButton"><h2>Start</h2></div>
     </section>
-    
+
     <script>
     let buttonFive = document.getElementById('button5')
     let buttonTen = document.getElementById('button10')
@@ -34,68 +34,69 @@
     let pause = document.getElementById('pause')
     let reset = document.getElementById('reset')
     let start = document.getElementById('startButton')
-    
+
     let timeLeft = 0
-     
-    
+
+
     buttonFive.addEventListener('click', fiveSec)
     buttonTen.addEventListener('click', tenSec)
     buttonFifteen.addEventListener ('click', fifteenSec)
     buttonTwenty.addEventListener ('click', twentySec)
     buttonThirty.addEventListener ('click', thirtySec)
-    /*input.addEventListener ('click', input) 
+    /*input.addEventListener ('click', input)
     pause.addEventListener ('click', pause)
     reset.addEventListener ('click', reset) */
     start.addEventListener ('click', startFun)
-        
+
     function fiveSec() {
         console.log('select at 5')
         timeLeft = 5
         console.log()
     }
-    
+
     function tenSec() {
         console.log('select at 10')
         timeLeft = 10
         console.log()
     }
-    
+
     function fifteenSec() {
         console.log('select at 15')
         timeLeft = 15
         console.log()
     }
-        
+
     function twentySec() {
         console.log('select at 20')
         timeLeft = 20
         console.log()
     }
-    
+
     function thirtySec() {
         console.log('select at 30')
         timeLeft = 30
         console.log()
     }
-       
+
     function startFun() {
         console.log('selected start')
-        let countdown = setInterval(timer, 1000);
-        function timer(){
-            timeLeft --
-        }
+        setInterval(function() {
+          timeLeft --
+        }, 1000);
+
+        
         /*
         console.log()
         let seconds = Math.floor((distance % (1000 * 60)) / 1000); */
 
     }
-    
-        
 
-    
-    
-    
+
+
+
+
+
     </script>
-    
+
 </body>
 </html>
